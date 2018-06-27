@@ -9,7 +9,6 @@ colnames = ['RID','Name','ZIPCODE']
 data = pandas.read_csv ('New_York_City_Restaurant.csv', names=colnames)
 zipcode = data.ZIPCODE.tolist()
 name = data.Name.tolist()
-#print zipcode
 kinesis = boto3.client('kinesis')
 
 i=0

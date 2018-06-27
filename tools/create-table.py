@@ -24,7 +24,6 @@ table = dynamodb.create_table(
             'AttributeType': 'N'
         }
     ],
-    # pricing determined by ProvisionedThroughput
     ProvisionedThroughput={
         'ReadCapacityUnits': 10,
         'WriteCapacityUnits': 10

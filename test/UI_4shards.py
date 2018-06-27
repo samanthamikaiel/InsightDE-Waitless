@@ -2,12 +2,14 @@ import boto3
 import json
 import random
 import csv
-import numpy as np
+import pandas
 
 
 kinesis = boto3.client('kinesis')
 
-zipcode = np.genfromtxt('zipcodes.csv',delimiter=",",dtype=int)
+colnames = ['RID','Name','ZIPCODE']
+data = pandas.read_csv ('New_York_City_Restaurant.csv', names=colnames)
+zipcode = data.ZIPCODE.tolist()
 
 i=0
 while i==i:
@@ -17,8 +19,10 @@ while i==i:
     input['PartySize'] = str(random.randint(1,3))
     
     Data = json.dumps(input)
-    
-    response = kinesis.put_record(StreamName='UI', Data=Data, PartitionKey='partitionkey')
+    print Data
+  
+    response = kinesis.put_record(StreamName='UI8', Data=Data, PartitionKey='partitionkey')
+    print response
     i=i+1
 
 

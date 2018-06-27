@@ -2,7 +2,7 @@ import boto3
 import json
 import random
 import csv
-import numpy as np
+import pandas
 
 
 kinesis = boto3.client('kinesis')
@@ -17,8 +17,8 @@ while i==i:
     input['PartySize'] = str(random.randint(1,3))
     
     Data = json.dumps(input)
-    
-    response = kinesis.put_record(StreamName='UI', Data=Data, PartitionKey='partitionkey')
+    print Data
+    response = kinesis.put_record(StreamName='UI8', Data=Data, PartitionKey='partitionkey')
     i=i+1
 
 
