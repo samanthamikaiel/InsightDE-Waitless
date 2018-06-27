@@ -1,33 +1,33 @@
 import boto3
 dynamodb = boto3.resource('dynamodb')
 table = dynamodb.create_table(
-    TableName='user-input',
+    TableName='RInput',
     KeySchema=[
         {
-            'AttributeName': 'UserID',
+            'AttributeName': 'ResturauntID',
             'KeyType': 'HASH'
                
         },
         {
-            'AttributeName': 'Zipcode',
+            'AttributeName': 'PartySize',
             'KeyType': 'RANGE'
                
         }
     ],
     AttributeDefinitions=[
         {
-            'AttributeName': 'UserID',
+            'AttributeName': 'ResturauntID',
             'AttributeType': 'N'
         },
         {
-            'AttributeName': 'Zipcode',
+            'AttributeName': 'PartySize',
             'AttributeType': 'N'
         }
     ],
     # pricing determined by ProvisionedThroughput
     ProvisionedThroughput={
-        'ReadCapacityUnits': 5,
-        'WriteCapacityUnits': 5
+        'ReadCapacityUnits': 10,
+        'WriteCapacityUnits': 10
     }
 )
 table.meta.client.get_waiter('table_exists').wait(TableName='hashtags')

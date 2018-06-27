@@ -14,12 +14,11 @@ while i==i:
     input = {}
     input['UserID'] = i+1
     input['Zipcode'] = random.choice(zipcode)
-    input['PartySize'] = random.randint(1,3)
-    input['Distance'] = random.randint(1,5)
+    input['PartySize'] = str(random.randint(1,3))
     
     Data = json.dumps(input)
-    print Data
-    response = kinesis.put_record(StreamName='user_input', Data=Data, PartitionKey='partitionkey')
+    
+    response = kinesis.put_record(StreamName='UI', Data=Data, PartitionKey='partitionkey')
     i=i+1
 
 
