@@ -1,7 +1,7 @@
 # InsightDE-Waitless
 ## Samantha Mikaiel's Insight-NY-18B Data Engineering Project
 
-A Real-Time Restaurant Wait Tracker ([Waitless](http:/waitless.site))
+A Real-Time Restaurant Wait Tracker ([Waitless](http:/waitless.site)) ([Presentation](https://www.slideshare.net/SamanthaMikaiel/samantha-mikaiel-de-ny-18b-waitless))
 
 ### About Waitless
 The demand for a restaurant changes cyclically. Prime meal times have longer waits than the middle of the night. Mother's Day will have more brunch reservations than a Tuesday in November. The trend continues. And when the demand to a restaurant increases the wait times at restaurants increase as well. When people are hungry, they tend to go to restaurants with shorter wait times if possible.
